@@ -4,5 +4,30 @@
     box-sizing: border-box; 
 }
 .container {
-display:grid; 
+display:flex; 
+flex-direction: column; 
+justify-content: center;
+
+}
+header {
+    display: flex; 
+    margin: 2rem auto; 
+    align-items: center;  
+}
+/* ul { 
+    justify-content: center;  
+    text-align: center;  */ 
+
+
+ul li {
+    /* display: grid; */ 
+    /* grid-template-rows: 1fr;  */
+    /* grid-template-columns: 1fr 1fr 1fr;  */
+    justify-content: center; 
+    display:flex; 
+    flex-direction: column; 
+
+    /* display:block; 
+    text-align: center;  */
+
 }
