@@ -16,3 +16,11 @@ header {
     
 
 }
+section ul li {
+    border: 1px solid black; 
+    border-radius: 4px; 
+    overflow: hidden; 
+    background-color: rgba(223, 164, 76, 0.801);  
+
+} 
+

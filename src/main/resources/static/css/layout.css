@@ -23,11 +23,36 @@ ul li {
     /* display: grid; */ 
     /* grid-template-rows: 1fr;  */
     /* grid-template-columns: 1fr 1fr 1fr;  */
-    justify-content: center; 
-    display:flex; 
-    flex-direction: column; 
+    /* display:flex; 
+    justify-content: right; 
+    flex-direction: row;  */
 
     /* display:block; 
     text-align: center;  */
 
 }
+.movie-genre {
+    margin: 3rem 0;
+    height: 14rem;
+}
+.clearfix::after {
+    clear: both;
+    content: '';
+    display: block 
+}
+
+ul li {  
+    /* display:flex;  */
+    /* justify-content: center;  */
+    /* flex-direction: row;   */
+    float: left; 
+    margin-right: 2%; 
+    margin-left: 10%; 
+    padding: 1rem;
+    width: 32%;
+    height: 100%; 
+    text-align: center; 
+}
+ul li :last-child { 
+    margin-right: 0;  
+} 
