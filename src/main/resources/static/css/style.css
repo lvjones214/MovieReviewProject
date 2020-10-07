@@ -10,17 +10,30 @@ html {
     background-size: cover;   
 }
 header {
-    /* background-color: black; */ 
     color: white; 
     font-size: xx-large; 
-    
+}
 
+h1 {
+    color: white; 
+    font-size: x-large; 
 }
 section ul li {
     border: 1px solid black; 
     border-radius: 4px; 
     overflow: hidden; 
     background-color: rgba(223, 164, 76, 0.801);  
-
-} 
-
+}
+section p {
+    border: 1px solid black; 
+    border-radius: 4px; 
+    overflow: hidden; 
+    background-color: rgb(207, 121, 200); 
+}
+nav {
+    background-color: rgba(223, 164, 76, 0.801); 
+}
+footer {
+    background-color: black; 
+    color: white; 
+}
