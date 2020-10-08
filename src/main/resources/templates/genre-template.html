@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/layout.css"> 
+</head>
+<body>
+    <div class = "container"> 
+        <header> DreamChasers Movie Review </header>
+        <nav> <a href = "Hashtags.html"> Hashtags</a>  
+        <a href ="prototype1.html"> Home </a></nav> 
+    <h1 th:text="${genre.name}">Action</h1>
+    <section>
+        <ul>
+            <li th:each="movie : ${genre.movies}">
+                <a th:text="${movie.movieTitle}" th:href="${genre.name}+'/'+ ${movie.movieTitle}">Rush Hour</a>
+            </li>
+<!--            <li><a href="./a">Raiders of The Lost Ark</a></li> -->
+<!--            <li><a href="./a">Mission Impossible</a></li>-->
+<!--            <li><a href="./a">Fast n Furious</a></li>-->
+<!--            <li><a href="./a">XXX </a></li>-->
+<!--            <li><a href="./a">Lethal Weapon</a></li>-->
+<!--            <li><a href="./a">Bad Boys</a></li>-->
+<!--            <li><a href="./a">Face Off</a></li> -->
+        </ul>
+    </section>
+    </div> 
+</body>
+</html>

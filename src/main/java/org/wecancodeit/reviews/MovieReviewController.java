@@ -12,7 +12,7 @@ public class MovieReviewController {
 
     @RequestMapping("sample-movie-review")
     public String showOneMovieReview(Model model){
-        MovieGenre sampleMovieGenre = new MovieGenre("Comedy", Collections.EMPTY_LIST);
+        MovieGenre sampleMovieGenre = new MovieGenre("Comedy", Collections.EMPTY_LIST, 1L);
         MovieReview sampleMovieReview = new MovieReview("Rush Hour", sampleMovieGenre.getName(), 1998, "PG-13", "5 Stars", "Assign Hashtags", "","");
 
         model.addAttribute("movieReview", sampleMovieReview);
