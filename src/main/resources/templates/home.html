@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/layout.css"> 
+</head>
+<body>
+    <div class = "container"> 
+    <header> DreamChasers Movie Review </header>
+    <nav> <a href = "Hashtags.html"> Hashtags</a>  
+    <a href ="prototype1.html"> Home </a></nav> 
+    <section class = "movie-genre"> 
+    <ul>
+        <li th:each="genre:${genres}">
+            <a th:text = "${genre.name}" th:href="'genre/' + ${genre.id}">Action</a>
+        </li>
+<!--        <li><a href="./a">Family</a></li>-->
+<!--        <li><a href="./Comedy.html">Comedy</a></li> -->
+<!--        <li><a href="./a">Horror/Thriller</a></li>-->
+<!--        <li><a href="./a">Drama</a></li>-->
+<!--        <li><a href="./a">Documentary</a></li>-->
+<!--        <li><a href="./a">Mystery</a></li>-->
+<!--        <li><a href="./a">Romance</a></li> -->
+    </ul>
+</section>
+</div>
+<footer class= "footer-span">&copy;2020 DreamChasers</footer>span> 
+</body>
+</html> 

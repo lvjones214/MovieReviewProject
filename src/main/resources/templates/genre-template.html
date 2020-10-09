@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/layout.css"> 
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/layout.css">
 </head>
 <body>
     <div class = "container"> 
@@ -16,7 +16,7 @@
     <h1 th:text="${genre.name}">Action</h1>
     <section>
         <ul>
-            <li th:each="movie : ${genre.movies}">
+            <li th:each="movie:${genre.items}">
                 <a th:text="${movie.movieTitle}" th:href="${genre.name}+'/'+ ${movie.movieTitle}">Rush Hour</a>
             </li>
 <!--            <li><a href="./a">Raiders of The Lost Ark</a></li> -->

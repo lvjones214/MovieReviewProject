@@ -26,6 +26,13 @@ public class GenreController {
         MovieGenre romance = new MovieGenre("Romance", Collections.EMPTY_LIST, 8L);
 
         actionMovies.add(new MovieReview("Rush Hour", action.getName(), 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description","Temp Review"));
+        actionMovies.add(new MovieReview("Rush Hour", action.getName(), 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description","Temp Review"));
+        actionMovies.add(new MovieReview("Rush Hour", action.getName(), 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description","Temp Review"));
+        actionMovies.add(new MovieReview("Rush Hour", action.getName(), 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description","Temp Review"));
+        actionMovies.add(new MovieReview("Rush Hour", action.getName(), 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description","Temp Review"));
+        actionMovies.add(new MovieReview("Rush Hour", action.getName(), 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description","Temp Review"));
+        actionMovies.add(new MovieReview("Rush Hour", action.getName(), 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description","Temp Review"));
+        actionMovies.add(new MovieReview("Rush Hour", action.getName(), 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description","Temp Review"));
         genreList.put(action.getId(), action);
         genreList.put(family.getId(), family);
         genreList.put(comedy.getId(), comedy);
@@ -38,14 +45,14 @@ public class GenreController {
 
     @RequestMapping({"", "/"})
     public String displayHomePage(Model model) {
-        model.addAttribute("owners", genreList.values());
+        model.addAttribute("genres", genreList.values());
         return "home";
     }
 
-    @RequestMapping("owner/{id}")
-    public String displaySingleOwner(Model model, @PathVariable Long id){
+    @RequestMapping("genre/{id}")
+    public String displaySingleGenre(Model model, @PathVariable Long id){
         model.addAttribute("genre", genreList.get(id));
-        return "user";
+        return "genre-template";
     }
 
 }
