@@ -10,6 +10,7 @@ public class MovieReview {
     private String hashtagList;
     private String description;
     private String review;
+    private long id;
 
     public MovieReview(String movieTitle, String genre, int yearReleased, String mpaaRating, String starRating, String hashtagList, String description, String review) {
         this.movieTitle = movieTitle;
@@ -20,6 +21,7 @@ public class MovieReview {
         this.hashtagList = hashtagList;
         this.description = description;
         this.review = review;
+        this.id = id;
     }
 
     public String getMovieTitle() {
@@ -53,4 +55,11 @@ public class MovieReview {
     public String getReview() {
         return review;
     }
-}
+
+    public long getId() {
+        return id;
+    }
+
+    }
+
+
