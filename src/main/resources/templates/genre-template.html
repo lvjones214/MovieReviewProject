@@ -17,7 +17,7 @@
     <section>
         <ul>
             <li th:each="movie:${genre.items}">
-                <a th:text="${movie.movieTitle}" th:href="${genre.name}+'/'+ ${movie.movieTitle}">Rush Hour</a>
+                <a th:text="${movie.movieTitle}" th:href="'/reviews/'+ ${movie.id}">Rush Hour</a>
             </li>
 <!--            <li><a href="./a">Raiders of The Lost Ark</a></li> -->
 <!--            <li><a href="./a">Mission Impossible</a></li>-->

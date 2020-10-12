@@ -25,7 +25,7 @@ public MovieReviewController(MovieStorage movieStorage) {
 //
 //        return "reviewtemplates";
 //    }
-    @RequestMapping("/{movieTitle}")
+    @RequestMapping("reviews/{id}") 
     public String showMovieReview(Model model, @PathVariable Long id){
         model.addAttribute("movieReview", movieStorage.retrieveMovieReviewById(id));  
         return "reviewtemplates";

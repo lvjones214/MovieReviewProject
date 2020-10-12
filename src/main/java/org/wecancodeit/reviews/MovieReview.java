@@ -12,7 +12,7 @@ public class MovieReview {
     private String review;
     private long id;
 
-    public MovieReview(String movieTitle, String genre, int yearReleased, String mpaaRating, String starRating, String hashtagList, String description, String review) {
+    public MovieReview(String movieTitle, String genre, int yearReleased, String mpaaRating, String starRating, String hashtagList, String description, String review, long id) {
         this.movieTitle = movieTitle;
         this.genre = genre;
         this.yearReleased = yearReleased;

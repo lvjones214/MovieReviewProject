@@ -8,14 +8,16 @@ import java.util.Map;
 
 @Service
 public class MovieStorage {
-Map<Long, MovieReview> movieReviewList = new HashMap<>();
+    Map<Long, MovieReview> movieReviewList = new HashMap<>();
 
     public MovieStorage() {
 
     }
+
     public void addReview(MovieReview reviewToAdd) {
         movieReviewList.put(reviewToAdd.getId(), reviewToAdd);
     }
+
     public Collection<MovieReview>
     retrieveAllMovieReviews() {
         return movieReviewList.values();
