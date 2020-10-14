@@ -2,30 +2,30 @@ package org.wecancodeit.reviews.storage;
 
 import org.springframework.stereotype.Service;
 import org.wecancodeit.reviews.Models.MovieReview;
+import org.wecancodeit.reviews.MovieReviewRepository;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class MovieStorage {
-    Map<Long, MovieReview> movieReviewList = new HashMap<>();
+private MovieReviewRepository movieReviewRepo;
 
-    public MovieStorage() {
+    public MovieStorage(MovieReviewRepository movieReviewRepo) {
+        this.movieReviewRepo = movieReviewRepo;
 
     }
 
     public void addReview(MovieReview reviewToAdd) {
-        movieReviewList.put(reviewToAdd.getId(), reviewToAdd);
+        movieReviewRepo.save(reviewToAdd);
     }
 
-    public Collection<MovieReview>
+    public Iterable<MovieReview>
     retrieveAllMovieReviews() {
-        return movieReviewList.values();
+        return movieReviewRepo.findAll();
     }
 
     public MovieReview
     retrieveMovieReviewById(Long id) {
-        return movieReviewList.get(id);
+        return movieReviewRepo.findById(id).get();
     }
 }

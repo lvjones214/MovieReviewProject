@@ -20,7 +20,6 @@ public class Populator implements CommandLineRunner {
     }
     @Override
     public void run(String... args) throws Exception {
-        Collection<MovieReview> actionMovies = new ArrayList<>();
         MovieGenre action = new MovieGenre("Action");
         MovieGenre family = new MovieGenre("Family");
         MovieGenre comedy = new MovieGenre("Comedy");
@@ -30,14 +29,6 @@ public class Populator implements CommandLineRunner {
         MovieGenre mystery = new MovieGenre("Mystery");
         MovieGenre romance = new MovieGenre("Romance");
 
-        actionMovies.add(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        actionMovies.add(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        actionMovies.add(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        actionMovies.add(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        actionMovies.add(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        actionMovies.add(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        actionMovies.add(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        actionMovies.add(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
         genreStorage.addGenre(action);
         genreStorage.addGenre(family);
         genreStorage.addGenre(comedy);
@@ -46,10 +37,15 @@ public class Populator implements CommandLineRunner {
         genreStorage.addGenre(documentary);
         genreStorage.addGenre(mystery);
         genreStorage.addGenre(romance);
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
+        movieStorage.addReview (new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
 
-        for(MovieReview movie : actionMovies){
-            movieStorage.addReview(movie);
-        }
     }
 
 
