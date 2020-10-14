@@ -37,14 +37,14 @@ public class Populator implements CommandLineRunner {
         genreStorage.addGenre(documentary);
         genreStorage.addGenre(mystery);
         genreStorage.addGenre(romance);
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
-        movieStorage.addReview (new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Assign Hashtags", "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Temp Description", "Temp Review"));
+        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
+        movieStorage.addReview (new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
 
     }
 

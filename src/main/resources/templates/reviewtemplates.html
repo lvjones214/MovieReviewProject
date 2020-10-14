@@ -9,8 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/layout.css">
 </head>
 <body>
 <div class = "container">
@@ -21,7 +21,7 @@
 
     <section class = "movie-content">
         <div class = "article">
-            <p th:text="'Genre: '  + ${movieReview.genre}">Genre: Action</p>
+            <p th:text="'Genre: '  + ${movieReview.genre.name}">Genre: Action</p>
             <p th:text="'Year Released: ' + ${movieReview.yearReleased}" >Year Released: 1998 </p>
             <p th:text="'MPAA Rating: ' + ${movieReview.mpaaRating}">MPAA Rating: PG-13</p>
             <p th:text="'Star Rating: ' + ${movieReview.starRating}">Star Rating: 5 stars</p>

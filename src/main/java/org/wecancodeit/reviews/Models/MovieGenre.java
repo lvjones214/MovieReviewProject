@@ -38,7 +38,6 @@ protected MovieGenre() {}
     public String toString() {
         return "MovieGenre{" +
                 "name='" + name + '\'' +
-                ", items=" + items +
                 ", id=" + id +
                 '}';
     }

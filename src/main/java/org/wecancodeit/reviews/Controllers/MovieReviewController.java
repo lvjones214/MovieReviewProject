@@ -1,16 +1,19 @@
 package org.wecancodeit.reviews.Controllers;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.wecancodeit.reviews.Models.MovieGenre;
 import org.wecancodeit.reviews.storage.MovieStorage;
 
 @Controller
 public class MovieReviewController {
 
-
+//    Logger log = LoggerFactory.getLogger(MovieReviewController.class);
     private MovieStorage movieStorage;
 public MovieReviewController(MovieStorage movieStorage) {
     this.movieStorage= movieStorage;
@@ -24,8 +27,10 @@ public MovieReviewController(MovieStorage movieStorage) {
 //
 //        return "reviewtemplates";
 //    }
-    @RequestMapping("reviews/{id}") 
-    public String showMovieReview(Model model, @PathVariable Long id){
+    @RequestMapping("/reviews/{id}")
+    public String showMovieReview(Model model, @PathVariable long id){
+//        log.info("The id is: " + id);
+//        log.info(movieStorage.retrieveMovieReviewById(id).toString());
         model.addAttribute("movieReview", movieStorage.retrieveMovieReviewById(id));  
         return "reviewtemplates";
     }
