@@ -20,16 +20,17 @@
     <h1 th:text="${movieReview.movieTitle}">Rush Hour</h1>
 
     <section class = "movie-content">
-        <div class = "article">
+        <div class = "movie-info">
             <p th:text="'Genre: '  + ${movieReview.genre.name}">Genre: Action</p>
             <p th:text="'Year Released: ' + ${movieReview.yearReleased}" >Year Released: 1998 </p>
             <p th:text="'MPAA Rating: ' + ${movieReview.mpaaRating}">MPAA Rating: PG-13</p>
             <p th:text="'Star Rating: ' + ${movieReview.starRating}">Star Rating: 5 stars</p>
-            <p th:each="hashtag:${movieReview.hashtagList}">
-            <a th:text="${hashtag.name}" th:href="'/Hashtag/'+ ${hashtag.id}">#Comedy</a>
+            <p class="movie-hashtag-box">
+            <a th:each="hashtag:${movieReview.hashtagList}" th:text="${hashtag.name} + ' '" th:href="'/Hashtag/'+ ${hashtag.id}">#Comedy</a>
             </p>
         </div>
-        <p th:text="'Description: ' + ${movieReview.description}">Description: When a Chinese diplomat's daughter is kidnapped in
+        <img src ="https://i.pinimg.com/originals/60/6e/15/606e15ffb471efa3ed15b15b9d14b03e.jpg"   height= 400>
+        <p class = "movie-description"th:text="'Description: ' + ${movieReview.description}">Description: When a Chinese diplomat's daughter is kidnapped in
             Los Angeles, he calls in Hong Kong Detective Inspector Lee (Jackie Chan)
             to assist the FBI with the case. But the FBI doesn't want anything to do with Lee,
             and they dump him off on the LAPD, who assign wisecracking Detective James Carter
@@ -37,7 +38,7 @@
             they choose to work together to solve the case on their own when they figure out
             they've been ditched by both the FBI and police
         </p>
-        <p th:text="'Review: ' + ${movieReview.review}">Review: Jackie Chan and Chris Tucker were great in these movies. I loved all 3 of them.
+        <p class= "movie-review" th:text="'Review: ' + ${movieReview.review}">Review: Jackie Chan and Chris Tucker were great in these movies. I loved all 3 of them.
             The two of them were hilarious throughout, and the fighting scenes were pretty decent, too.
             I especially love the outtakes during the end credits, where Mr. Chan has trouble speaking a
             few words in English, while Mr. Tucker has REAL trouble speaking Chinese. I think he gets better
