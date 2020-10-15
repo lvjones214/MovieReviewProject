@@ -14,9 +14,11 @@ import java.util.Collection;
 public class Populator implements CommandLineRunner {
     private GenreStorage genreStorage;
     private MovieStorage movieStorage;
-    public Populator(GenreStorage genreStorage, MovieStorage movieStorage) {
+    private HashtagRepository hashtagRepo;
+    public Populator(GenreStorage genreStorage, MovieStorage movieStorage, HashtagRepository hashtagRepo) {
         this.genreStorage = genreStorage;
         this.movieStorage = movieStorage;
+        this.hashtagRepo = hashtagRepo;
     }
     @Override
     public void run(String... args) throws Exception {
@@ -37,15 +39,12 @@ public class Populator implements CommandLineRunner {
         genreStorage.addGenre(documentary);
         genreStorage.addGenre(mystery);
         genreStorage.addGenre(romance);
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars", "Temp Description", "Temp Review"));
-        movieStorage.addReview(new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
-        movieStorage.addReview (new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review"));
-
+        MovieReview movieReviewToAdd1 = new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review");
+        movieStorage.addReview(movieReviewToAdd1);
+        MovieReview movieReviewToAdd2 = new MovieReview("Rush Hour 2", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review");
+        movieStorage.addReview(movieReviewToAdd2);
+        hashtagRepo.save(new Hashtag("#mustsee", movieReviewToAdd1));
+        hashtagRepo.save(new Hashtag("#hilarious", movieReviewToAdd1, movieReviewToAdd2));
     }
 
 
