@@ -16,6 +16,7 @@
 <div class = "container">
     <header> DreamChasers Movie Review </header>
     <nav> <a href = "Hashtagtemplate.html"> Hashtags</a>
+
         <a href ="prototype1.html"> Home </a></nav>
     <h1 th:text="${movieReview.movieTitle}">Rush Hour</h1>
 
@@ -27,6 +28,16 @@
             <p th:text="'Star Rating: ' + ${movieReview.starRating}">Star Rating: 5 stars</p>
             <p class="movie-hashtag-box">
             <a th:each="hashtag:${movieReview.hashtagList}" th:text="${hashtag.name} + ' '" th:href="'/Hashtag/'+ ${hashtag.id}">#Comedy</a>
+            <form action="/hashtag" method="post">
+            <input type="hidden" th:value="${movieReview.id}" name="reviewId" >
+
+                <label for="hashtag-name-input">New hashtagName:</label>
+                <input type="text" name="hashtagName" id="hashtag-name-input">
+                <button type="submit">
+                    Submit New hashtag
+                </button>
+            </form>
+
             </p>
         </div>
         <img src ="https://i.pinimg.com/originals/60/6e/15/606e15ffb471efa3ed15b15b9d14b03e.jpg"   height= 400>

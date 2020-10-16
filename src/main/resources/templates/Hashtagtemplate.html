@@ -13,7 +13,7 @@
         <header> DreamChasers Movie Review </header>
         <nav> <a href = "Hashtagtemplate.html"> Hashtags</a>
         <a href ="home.html"> Home </a></nav>
-    <h1>Hashtags</h1> 
+    <h1 th:text="${hashtags.name}">Hashtags</h1>
     <section>
         <ul>
             <li th:each="hashtag:${hashtags.movieReviews}">
