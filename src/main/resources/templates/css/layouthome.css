@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    display:grid;
+    height: 90vh;
+    width: 90%;
+}
+header {
+    justify-items: center;
+}
+h1 {
+    display: grid;
+    justify-content: center;
+}
+.movie-genre {
+    /*margin: 3rem 0;*/
+    /*height: 14rem;*/
+}
+.clearfix::after {
+    clear: both;
+    content: '';
+    display: block
+}
+ul li {
+    float: left;
+    /*margin-right: 2%;*/
+    /*margin-left: 10%;*/
+    /*padding: 1rem;*/
+    /*width: 32%;*/
+    /*height: 100%;*/
+    /*text-align: center;*/
+    /*margin-bottom: 2%;*/
+}
+ul li :last-child {
+    margin-right: 0;
+}
+/*nav {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
+footer {
+    display: block;
+    justify-content: center;
+    text-align: center;
+}

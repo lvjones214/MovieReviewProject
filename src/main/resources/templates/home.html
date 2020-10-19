@@ -9,26 +9,27 @@
     <link rel="stylesheet" href="/css/layout.css">
 </head>
 <body>
-    <div class = "container"> 
-    <header> DreamChasers Movie Review </header>
-    <nav> <a href = "/all-hashtag-list"> Hashtags</a>
-    <a href ="/"> Home </a></nav>
-        <h1> Movie Genres </h1>
-    <section class = "movie-genre"> 
-    <ul>
-        <li th:each="genre:${genres}">
-            <a th:text = "${genre.name}" th:href="'genre/' + ${genre.id}">Action</a>
-        </li>
-<!--        <li><a href="./a">Family</a></li>-->
-<!--        <li><a href="./Comedy.html">Comedy</a></li> -->
-<!--        <li><a href="./a">Horror/Thriller</a></li>-->
-<!--        <li><a href="./a">Drama</a></li>-->
-<!--        <li><a href="./a">Documentary</a></li>-->
-<!--        <li><a href="./a">Mystery</a></li>-->
-<!--        <li><a href="./a">Romance</a></li> -->
-    </ul>
-</section>
+<div class="container">
+    <header> <h1>DreamChasers Movie Review</h1>
+    <nav><a href="/all-hashtag-list"> Hashtags</a>
+        <a href="/"> Home </a></nav>
+    </header>
+    <section class="movie-genre">
+        <h2> Movie Genres </h2>
+        <ul>
+            <li th:each="genre:${genres}">
+                <a th:text="${genre.name}" th:href="'genre/' + ${genre.id}">Action</a>
+            </li>
+            <!--        <li><a href="./a">Family</a></li>-->
+            <!--        <li><a href="./Comedy.html">Comedy</a></li> -->
+            <!--        <li><a href="./a">Horror/Thriller</a></li>-->
+            <!--        <li><a href="./a">Drama</a></li>-->
+            <!--        <li><a href="./a">Documentary</a></li>-->
+            <!--        <li><a href="./a">Mystery</a></li>-->
+            <!--        <li><a href="./a">Romance</a></li> -->
+        </ul>
+    </section>
+    <footer class="footer-span">&copy;2020 DreamChasers</footer>
 </div>
-<footer class= "footer-span">&copy;2020 DreamChasers</footer>span> 
 </body>
 </html> 
