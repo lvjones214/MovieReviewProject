@@ -1,0 +1,39 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;  
+}
+
+html  {
+    height: 100vh;
+    background-image: url(https://images.freeimages.com/images/large-previews/6d9/cinema-1620545.jpg); 
+    background-size: cover;   
+}
+header {
+    color: white; 
+    font-size: xx-large; 
+}
+
+h1 {
+    color: white; 
+    font-size: x-large; 
+}
+section ul li {
+    border: 1px solid black; 
+    border-radius: 4px; 
+    overflow: hidden; 
+    background-color: rgba(223, 164, 76, 0.801);  
+}
+section p {
+    border: 1px solid black; 
+    border-radius: 4px; 
+    overflow: hidden; 
+    background-color: rgb(207, 121, 200); 
+}
+nav a {
+    background-color: rgba(223, 164, 76, 0.801); 
+}
+footer {
+    background-color: black; 
+    color: white; 
+}

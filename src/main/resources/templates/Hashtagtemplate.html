@@ -11,13 +11,13 @@
 <body>
     <div class = "container"> 
         <header> DreamChasers Movie Review </header>
-        <nav> <a href = "Hashtagtemplate.html"> Hashtags</a>
-        <a href ="home.html"> Home </a></nav>
+        <nav> <a href = "/all-hashtag-list"> Hashtags</a>
+            <a href ="/"> Home </a></nav>
     <h1 th:text="${hashtags.name}">Hashtags</h1>
     <section>
         <ul>
             <li th:each="hashtag:${hashtags.movieReviews}">
-                <a th:text = "${hashtag.movieTitle}" th:href="'hashtag/' + ${hashtag.id}">#Comedy</a>
+                <a th:text = "${hashtag.movieTitle}" th:href="'/reviews/' + ${hashtag.id}">#Comedy</a>
             </li>
         </ul>
 <!--        <ul>-->

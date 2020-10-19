@@ -20,17 +20,18 @@ public class HashtagController {
     @RequestMapping("/Hashtag/{id}")
     public String displayHashtags(Model model, @PathVariable long id) {
         model.addAttribute("hashtags", hashtagStorage.retrieveHashtagById(id));
-return "Hashtagtemplate";
+    return "Hashtagtemplate";
     }
   @PostMapping("/hashtag")
-
-  public String addHashtag(@RequestParam String hashtagName ,@RequestParam long reviewId ){
-       Hashtag hashtagToAdd = new Hashtag(hashtagName, movieStorage.retrieveMovieReviewById(reviewId));
-      hashtagStorage.addHashtag(hashtagToAdd);
-
-      return "redirect:/reviews/"+reviewId;
-
+     public String addHashtag(@RequestParam String hashtagName ,@RequestParam long reviewId ){
+        Hashtag hashtagToAdd = new Hashtag(hashtagName, movieStorage.retrieveMovieReviewById(reviewId));
+        hashtagStorage.addHashtag(hashtagToAdd);
+        return "redirect:/reviews/"+reviewId;
   }
-
+    @RequestMapping("/all-hashtag-list")
+    public String displayAllHashtags(Model model){
+        model.addAttribute("allHashtagsList", hashtagStorage.retrieveAllHashtags());
+        return "all-hashtags-template";
+    }
 }
 

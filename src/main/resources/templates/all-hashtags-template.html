@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/layout.css">
+</head>
+<body>
+<div class = "container">
+    <header> DreamChasers Movie Review </header>
+    <nav> <a href = "/all-hashtag-list"> Hashtags</a>
+        <a href ="/"> Home </a></nav>
+    <h1> Hashtags </h1>
+    <section class = "hashtags">
+        <ul>
+            <li th:each="hashtag:${allHashtagsList}">
+                <a th:text = "${hashtag.name}" th:href="'hashtag/' + ${hashtag.id}">#MustSeeMovie</a>
+            </li>
+        </ul>
+    </section>
+</div>
+<footer class= "footer-span">&copy;2020 DreamChasers</footer>span>
+</body>
+</html>
