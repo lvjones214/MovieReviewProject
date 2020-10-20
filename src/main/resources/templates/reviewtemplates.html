@@ -26,18 +26,16 @@
             <p th:text="'MPAA Rating: ' + ${movieReview.mpaaRating}">MPAA Rating: PG-13</p>
             <p th:text="'Star Rating: ' + ${movieReview.starRating}">Star Rating: 5 stars</p>
             <p class="movie-hashtag-box">
-            <a th:each="hashtag:${movieReview.hashtagList}" th:text="${hashtag.name} + ' '" th:href="'/Hashtag/'+ ${hashtag.id}">#Comedy</a>
+                <a th:each="hashtag:${movieReview.hashtagList}" th:text="${hashtag.name} + ' '" th:href="'/Hashtag/'+ ${hashtag.id}">#Comedy</a> </p>
             <form action="/hashtag" method="post">
             <input type="hidden" th:value="${movieReview.id}" name="reviewId" >
 
-                <label for="hashtag-name-input">New hashtagName:</label>
+                <label for="hashtag-name-input">New Hashtag Name:</label>
                 <input type="text" name="hashtagName" id="hashtag-name-input">
                 <button type="submit">
                     Submit New hashtag
                 </button>
             </form>
-
-            </p>
         </div>
         <img src ="https://i.pinimg.com/originals/60/6e/15/606e15ffb471efa3ed15b15b9d14b03e.jpg"   height= 400>
         <p class = "movie-description"th:text="'Description: ' + ${movieReview.description}">Description: When a Chinese diplomat's daughter is kidnapped in
