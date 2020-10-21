@@ -7,9 +7,6 @@ import org.wecancodeit.reviews.Models.MovieReview;
 import org.wecancodeit.reviews.storage.GenreStorage;
 import org.wecancodeit.reviews.storage.MovieStorage;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 @Component
 public class Populator implements CommandLineRunner {
     private GenreStorage genreStorage;
@@ -39,9 +36,9 @@ public class Populator implements CommandLineRunner {
         genreStorage.addGenre(documentary);
         genreStorage.addGenre(mystery);
         genreStorage.addGenre(romance);
-        MovieReview movieReviewToAdd1 = new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review");
+        MovieReview movieReviewToAdd1 = new MovieReview("Rush Hour", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review", "https://i.pinimg.com/originals/60/6e/15/606e15ffb471efa3ed15b15b9d14b03e.jpg");
         movieStorage.addReview(movieReviewToAdd1);
-        MovieReview movieReviewToAdd2 = new MovieReview("Rush Hour 2", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review");
+        MovieReview movieReviewToAdd2 = new MovieReview("Rush Hour 2", action, 1998, "PG-13", "5 Stars",  "Temp Description", "Temp Review", "https://vignette.wikia.nocookie.net/rushhour/images/2/21/RH2.jpg");
         movieStorage.addReview(movieReviewToAdd2);
         hashtagRepo.save(new Hashtag("#mustsee", movieReviewToAdd1));
         hashtagRepo.save(new Hashtag("#hilarious", movieReviewToAdd1, movieReviewToAdd2));

@@ -16,7 +16,9 @@
 <div class = "container">
     <header> DreamChasers Movie Review </header>
     <nav> <a href = "/all-hashtag-list"> Hashtags</a>
-        <a href ="/"> Home </a></nav>
+        <a href ="/"> Home </a>
+        <a th:href ="'/edit-review/'+${movieReview.id}">Edit Review</a>
+    </nav>
     <h1 th:text="${movieReview.movieTitle}">Rush Hour</h1>
 
     <section class = "movie-content">
@@ -37,8 +39,8 @@
                 </button>
             </form>
         </div>
-        <img src ="https://i.pinimg.com/originals/60/6e/15/606e15ffb471efa3ed15b15b9d14b03e.jpg"   height= 400>
-        <p class = "movie-description"th:text="'Description: ' + ${movieReview.description}">Description: When a Chinese diplomat's daughter is kidnapped in
+        <img th:src ="${movieReview.imageUrl}"   height= 400>
+        <p class = "movie-description"th:utext="'Description: ' + ${movieReview.description}">Description: When a Chinese diplomat's daughter is kidnapped in
             Los Angeles, he calls in Hong Kong Detective Inspector Lee (Jackie Chan)
             to assist the FBI with the case. But the FBI doesn't want anything to do with Lee,
             and they dump him off on the LAPD, who assign wisecracking Detective James Carter

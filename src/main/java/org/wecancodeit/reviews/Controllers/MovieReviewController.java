@@ -6,8 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.wecancodeit.reviews.Hashtag;
-import org.wecancodeit.reviews.Models.MovieGenre;
 import org.wecancodeit.reviews.Models.MovieReview;
 import org.wecancodeit.reviews.storage.GenreStorage;
 import org.wecancodeit.reviews.storage.MovieStorage;
@@ -15,7 +13,7 @@ import org.wecancodeit.reviews.storage.MovieStorage;
 @Controller
 public class MovieReviewController {
 
-//    Logger log = LoggerFactory.getLogger(MovieReviewController.class);
+    Logger log = LoggerFactory.getLogger(MovieReviewController.class);
     private MovieStorage movieStorage;
     private GenreStorage genreStorage;
 public MovieReviewController(MovieStorage movieStorage, GenreStorage genreStorage) {
@@ -42,11 +40,29 @@ public MovieReviewController(MovieStorage movieStorage, GenreStorage genreStorag
     }
     @PostMapping("/moviereview")
     public String addMovieReview(@RequestParam String movieName, @RequestParam long genreId, @RequestParam int yearReleased,@RequestParam String mpaaRating,@RequestParam String starRating,@RequestParam String hashtagName,@RequestParam String imgUrlName,@RequestParam String movieDescriptionName,@RequestParam String movieReviewName){
-        MovieReview movieReviewToAdd = new MovieReview(movieName, genreStorage.retrieveGenreById(genreId), yearReleased, mpaaRating, starRating, movieDescriptionName, movieReviewName);
-   // should be genre object for genre name
-        // figure out how to add img URL and hashtag to movie review object.
+        MovieReview movieReviewToAdd = new MovieReview(movieName, genreStorage.retrieveGenreById(genreId), yearReleased, mpaaRating, starRating, movieDescriptionName, movieReviewName, imgUrlName);
         movieStorage.addReview(movieReviewToAdd);
         return "redirect:/reviews/"+movieReviewToAdd.getId();
+    }
+
+    @RequestMapping("/edit-review/{id}")
+    public String editMovieReview(Model model, @PathVariable long id){
+        model.addAttribute("movieReview", movieStorage.retrieveMovieReviewById(id));
+        return "editreviewtemplate";
+    }
+
+    @PostMapping("/changedescription")
+    public String changeMovieDescription(@RequestParam String newDescription, @RequestParam long reviewId){
+        MovieReview movieReviewToChange = movieStorage.retrieveMovieReviewById(reviewId);
+        movieReviewToChange.setDescription(newDescription);
+        log.info(movieReviewToChange.getDescription()+" | "+newDescription);
+        return "redirect:/reviews/"+reviewId;
+    }
+
+    @PostMapping("/changereview")
+    public String changeMovieReview(@RequestParam String newReview, @RequestParam long reviewId){
+        movieStorage.retrieveMovieReviewById(reviewId).setReview(newReview);
+        return "redirect:/reviews/"+reviewId;
     }
 
 }

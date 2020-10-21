@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/layout2.css">
+</head>
+<body>
+<div class = "container">
+    <header> DreamChasers Movie Review </header>
+    <nav> <a href = "/all-hashtag-list"> Hashtags</a>
+        <a href ="/"> Home </a></nav>
+    <h1 th:text="${movieReview.movieTitle}">Rush Hour</h1>
+
+    <section class = "movie-content">
+        <div class = "movie-info">
+            <p th:text="'Genre: '  + ${movieReview.genre.name}">Genre: Action</p>
+            <p th:text="'Year Released: ' + ${movieReview.yearReleased}" >Year Released: 1998 </p>
+            <p th:text="'MPAA Rating: ' + ${movieReview.mpaaRating}">MPAA Rating: PG-13</p>
+            <p th:text="'Star Rating: ' + ${movieReview.starRating}">Star Rating: 5 stars</p>
+            <p class="movie-hashtag-box">
+                <a th:each="hashtag:${movieReview.hashtagList}" th:text="${hashtag.name} + ' '" th:href="'/Hashtag/'+ ${hashtag.id}">#Comedy</a> </p>
+            <form action="/hashtag" method="post">
+                <input type="hidden" th:value="${movieReview.id}" name="reviewId" >
+
+                <label for="hashtag-name-input">New Hashtag Name:</label>
+                <input type="text" name="hashtagName" id="hashtag-name-input">
+                <button type="submit">
+                    Submit New hashtag
+                </button>
+            </form>
+        </div>
+        <img th:src ="${movieReview.imageUrl}"   height= 400>
+        <form action="/changedescription" method="post">
+            <input type="hidden" th:value="${movieReview.id}" name="reviewId" >
+            <label for="description-input">New Description:</label>
+            <input type="text" name="newDescription" id="description-input">
+            <button type="submit">
+                Submit Edited Description
+            </button>
+        </form>
+        <form action="/changereview" method="post">
+            <label for="review-input">New Review:</label>
+            <input type="text" name="newReview" id="review-input">
+            <input type="hidden" th:value="${movieReview.id}" name="reviewId" >
+            <button type="submit">
+                Submit Edited Review
+            </button>
+        </form>
+
+    </section>
+</div>
+</body>
+</html>

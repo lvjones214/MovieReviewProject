@@ -4,11 +4,11 @@ import org.wecancodeit.reviews.Hashtag;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.Objects;
 
 @Entity
 public class MovieReview {
 
+    private String imageUrl;
     private String movieTitle;
     @ManyToOne
     private MovieGenre genre;
@@ -25,7 +25,7 @@ public class MovieReview {
 
     protected MovieReview() {}
 
-    public MovieReview(String movieTitle, MovieGenre genre, int yearReleased, String mpaaRating, String starRating, String description, String review) {
+    public MovieReview(String movieTitle, MovieGenre genre, int yearReleased, String mpaaRating, String starRating, String description, String review, String imageUrl) {
         this.movieTitle = movieTitle;
         this.genre = genre;
         this.yearReleased = yearReleased;
@@ -33,7 +33,12 @@ public class MovieReview {
         this.starRating = starRating;
         this.description = description;
         this.review = review;
+        this.imageUrl = imageUrl;
 
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public String getMovieTitle() {
@@ -70,6 +75,14 @@ public class MovieReview {
 
     public long getId() {
         return id;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
     }
 
     @Override
