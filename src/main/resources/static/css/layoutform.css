@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --grid-gap: 20px;
+}
+.container{
+    display:grid;
+    width:90%;
+    height:90vh;
+}
+header{
+    display:grid;
+    justify-content: center;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 70%;
+    margin-right: 10%;
+}
+h1{
+    display:grid;
+    /*grid-column: 1/-1;*/
+    justify-content:center;
+    margin-bottom: 5%;
+}
+.movie-content{
+    display:grid;
+    grid-template-rows: auto;
+    grid-template-columns: 40fr 60fr;
+    column-gap: 5%;
+    row-gap:5%;
+    margin-left: 10%;
+}
+.movie-info{
+    display:grid;
+    grid-row: 1fr;
+    gap:10px;
+}
+.movie-info p{
+    padding:1rem;
+}
+/*.movie-hashtag-box{*/
+/*    padding:1rem;*/
+/*}*/
+img {
+    display:grid;
+    grid-template-rows:auto;
+    margin-left: 25%;
+    gap:10px;
+}
+.movie-description{
+    display: grid;
+    grid-column: 1/-1;
+    padding: 1rem;
+}
+.movie-review{
+    display:grid;
+    grid-column: 1/-1;
+    padding: 1rem;
+}
+.footer{
+    grid-column: 1/-1;
+}
