@@ -24,4 +24,10 @@ private GenreStorage genreStorage;
         model.addAttribute("genre", genreStorage.retrieveGenreById(id));
         return "genre-template";
     }
+
+    @RequestMapping("new-review")
+    public String displayReviewForms(Model model){
+        model.addAttribute("genres", genreStorage.retrieveAllGenres());
+        return "reviewforms";
+    }
 }

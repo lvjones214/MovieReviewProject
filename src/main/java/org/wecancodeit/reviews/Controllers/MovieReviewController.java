@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.wecancodeit.reviews.Hashtag;
 import org.wecancodeit.reviews.Models.MovieGenre;
 import org.wecancodeit.reviews.Models.MovieReview;
+import org.wecancodeit.reviews.storage.GenreStorage;
 import org.wecancodeit.reviews.storage.MovieStorage;
 
 @Controller
@@ -16,8 +17,10 @@ public class MovieReviewController {
 
 //    Logger log = LoggerFactory.getLogger(MovieReviewController.class);
     private MovieStorage movieStorage;
-public MovieReviewController(MovieStorage movieStorage) {
+    private GenreStorage genreStorage;
+public MovieReviewController(MovieStorage movieStorage, GenreStorage genreStorage) {
     this.movieStorage= movieStorage;
+    this.genreStorage = genreStorage;
 }
 //    @RequestMapping("sample-movie-review")
 //    public String showOneMovieReview(Model model){
@@ -38,12 +41,12 @@ public MovieReviewController(MovieStorage movieStorage) {
         return "reviewtemplates";
     }
     @PostMapping("/moviereview")
-    public String addMovieReview(@RequestParam String movieName, @RequestParam String genreName, @RequestParam int yearReleased,@RequestParam String mpaaRating,@RequestParam String starRating,@RequestParam String hashtagName,@RequestParam String imgUrlName,@RequestParam String movieDescriptionName,@RequestParam String movieReviewName){
-        MovieReview movieReviewToAdd = new MovieReview(movieName, genreName, yearReleased, mpaaRating, starRating, movieDescriptionName, movieReviewName);
+    public String addMovieReview(@RequestParam String movieName, @RequestParam long genreId, @RequestParam int yearReleased,@RequestParam String mpaaRating,@RequestParam String starRating,@RequestParam String hashtagName,@RequestParam String imgUrlName,@RequestParam String movieDescriptionName,@RequestParam String movieReviewName){
+        MovieReview movieReviewToAdd = new MovieReview(movieName, genreStorage.retrieveGenreById(genreId), yearReleased, mpaaRating, starRating, movieDescriptionName, movieReviewName);
    // should be genre object for genre name
         // figure out how to add img URL and hashtag to movie review object.
-        hashtagStorage.addHashtag(hashtagToAdd);
-        return "redirect:/reviews/"+reviewId;
+        movieStorage.addReview(movieReviewToAdd);
+        return "redirect:/reviews/"+movieReviewToAdd.getId();
     }
 
 }

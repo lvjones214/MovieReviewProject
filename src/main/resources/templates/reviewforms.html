@@ -18,23 +18,27 @@
         <div class = "movie-info">
             <form action="/moviereview" method="post">
                 <label for="movie-name-input">New Movie Name:</label>
-                <input type="text" name=" movieName" id="movie-name-input">
-                <label for="genre-name-input">New Genre Name:</label>
-                <input type="text" name=" genreName" id="genre-name-input">
+                <input type="text" name="movieName" id="movie-name-input">
+                <label for="genre-name-input">Choose a Genre:</label>
+                <select id="genre-name-input" name="genreId">
+                    <option th:each="genre:${genres}" th:value="${genre.id}" th:text="${genre.name}">Action</option>
+                </select>
+<!--                <label for="genre-name-input">New Genre Name:</label>-->
+<!--                <input type="text" name=" genreName" id="genre-name-input">-->
                 <label for="year-released-input">New Year Released:</label>
-                <input type="number" name=" yearReleased" id="year-released-input" min="1900" max="2021">
+                <input type="number" name="yearReleased" id="year-released-input" min="1900" max="2021">
                 <label for="mpaa-rating-input">New MPAA Rating:</label>
-                <input type="text" name=" mpaaRating" id="mpaa-rating-input">
+                <input type="text" name="mpaaRating" id="mpaa-rating-input">
                 <label for="star-rating-input">New Star Rating:</label>
-                <input type="text" name=" starRating" id="star-rating-input">
+                <input type="text" name="starRating" id="star-rating-input">
                 <label for="hashtag-name-input">New Hashtag:</label>
-                <input type="text" name=" hashtagName" id="hashtag-name-input">
+                <input type="text" name="hashtagName" id="hashtag-name-input">
                 <label for="img-url-input">New Img Url:</label>
-                <input type="text" name=" imgUrlName" id="img-url-input">
+                <input type="text" name="imgUrlName" id="img-url-input">
                 <label for="movie-description-input">New Movie Description:</label>
-                <input type="text" name=" movieDescriptionName" id="movie-description-input">
+                <input type="text" name="movieDescriptionName" id="movie-description-input">
                 <label for="movie-review-input">New Movie Review:</label>
-                <input type="text" name=" movieReviewName" id="movie-review-input">
+                <input type="text" name="movieReviewName" id="movie-review-input">
                 <button type="submit">
                     Submit New Movie Review
                 </button>
