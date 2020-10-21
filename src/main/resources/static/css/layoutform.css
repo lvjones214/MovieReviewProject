@@ -1,15 +1,15 @@
 *{
-    margin: 0;
+    margin: 0 ;
     padding: 0;
     box-sizing: border-box;
 }
-:root {
-    --grid-gap: 20px;
-}
 .container{
     display:grid;
-    width:90%;
+    margin:0 auto;
     height:90vh;
+    justify-content: center;
+    max-width:1000px;
+    width:90%;
 }
 header{
     display:grid;
@@ -27,41 +27,18 @@ h1{
     justify-content:center;
     margin-bottom: 5%;
 }
-.movie-content{
+form{
     display:grid;
-    grid-template-rows: auto;
-    grid-template-columns: 40fr 60fr;
-    column-gap: 5%;
-    row-gap:5%;
-    margin-left: 10%;
+    grid-template-columns: 200px 450px;
+    grid-template-rows: repeat(7, 50px) 150px 250px
 }
-.movie-info{
-    display:grid;
-    grid-row: 1fr;
-    gap:10px;
-}
-.movie-info p{
-    padding:1rem;
-}
-/*.movie-hashtag-box{*/
-/*    padding:1rem;*/
+/*label{*/
+/*    padding:5%;*/
 /*}*/
-img {
-    display:grid;
-    grid-template-rows:auto;
-    margin-left: 25%;
-    gap:10px;
+button{
+    grid-column:1/-1;
 }
-.movie-description{
-    display: grid;
-    grid-column: 1/-1;
-    padding: 1rem;
-}
-.movie-review{
-    display:grid;
-    grid-column: 1/-1;
-    padding: 1rem;
-}
-.footer{
-    grid-column: 1/-1;
-}
+/*.footer{*/
+/*    grid-column: 1/-1;*/
+/*}*/
+
