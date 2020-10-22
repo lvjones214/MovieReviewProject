@@ -5,10 +5,11 @@
 }
 .container{
     display:grid;
+    grid-template-rows: 200px auto 100px;
     margin:0 auto;
     height:90vh;
     justify-content: center;
-    max-width:1000px;
+    max-width:1500px;
     width:90%;
 }
 header{
@@ -17,28 +18,30 @@ header{
 }
 nav {
     display: flex;
-    justify-content: space-between;
-    margin-left: 70%;
-    margin-right: 10%;
+    justify-self: flex-end;
+    padding: 10%;
 }
-h1{
-    display:grid;
-    /*grid-column: 1/-1;*/
-    justify-content:center;
-    margin-bottom: 5%;
+nav a {
+    padding: 2%;
+    justify-content: space-around;
+    margin-right: 10%;
+    white-space: nowrap;
+}
+h2 {
+    display: grid;
+    justify-content: center;
 }
 form{
     display:grid;
     grid-template-columns: 200px 450px;
     grid-template-rows: repeat(7, 50px) 150px 250px
 }
-/*label{*/
-/*    padding:5%;*/
-/*}*/
 button{
     grid-column:1/-1;
 }
-/*.footer{*/
-/*    grid-column: 1/-1;*/
-/*}*/
+footer {
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
 

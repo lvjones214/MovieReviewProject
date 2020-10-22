@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/layouthome.css">
 </head>
 <body>
     <div class = "container">
@@ -16,8 +16,8 @@
                 <a href="/new-review">Review a Movie!</a>
             </nav>
         </header>
-    <h1 th:text="${hashtags.name}">Hashtags</h1>
     <section>
+        <h2 th:text="${hashtags.name}">Hashtags</h2>
         <ul>
             <li th:each="hashtag:${hashtags.movieReviews}">
                 <a th:text = "${hashtag.movieTitle}" th:href="'/reviews/' + ${hashtag.id}">#Comedy</a>
@@ -33,6 +33,7 @@
 <!--            <li><a href="../static/SampleHashtags.html"> #Inclusive </a></li>-->
 <!--        </ul>-->
     </section>
+        <footer class="footer-span">&copy;2020 DreamChasers</footer>
     </div>  
 </body>
 </html>

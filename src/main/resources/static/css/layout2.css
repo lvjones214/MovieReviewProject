@@ -10,6 +10,8 @@
     display:grid;
     width:90%;
     height:90vh;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 header{
     display:grid;
@@ -17,13 +19,17 @@ header{
 }
 nav {
     display: flex;
-    justify-content: space-between;
-    margin-left: 70%;
+    justify-self: flex-end;
+    padding: 10%;
+}
+nav a {
+    padding: 2%;
+    justify-content: space-around;
     margin-right: 10%;
+    white-space: nowrap;
 }
 h1{
     display:grid;
-    /*grid-column: 1/-1;*/
     justify-content:center;
     margin-bottom: 5%;
 }
@@ -43,9 +49,6 @@ h1{
 .movie-info p{
     padding:1rem;
 }
-/*.movie-hashtag-box{*/
-/*    padding:1rem;*/
-/*}*/
 img {
     display:grid;
     grid-template-rows:auto;
@@ -56,12 +59,16 @@ img {
     display: grid;
     grid-column: 1/-1;
     padding: 1rem;
+    align-content: center;
 }
 .movie-review{
     display:grid;
     grid-column: 1/-1;
     padding: 1rem;
+    align-content: center;
 }
-.footer{
-    grid-column: 1/-1;
+footer {
+    display: block;
+    justify-content: center;
+    text-align: center;
 }
