@@ -1,6 +1,4 @@
-package org.wecancodeit.reviews;
-
-import org.wecancodeit.reviews.Models.MovieReview;
+package org.wecancodeit.reviews.Models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -3,7 +3,7 @@ package org.wecancodeit.reviews.Controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.wecancodeit.reviews.Hashtag;
+import org.wecancodeit.reviews.Models.Hashtag;
 import org.wecancodeit.reviews.storage.HashtagStorage;
 import org.wecancodeit.reviews.storage.MovieStorage;
 
