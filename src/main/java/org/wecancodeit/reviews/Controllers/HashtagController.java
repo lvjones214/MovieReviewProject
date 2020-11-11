@@ -22,8 +22,8 @@ public class HashtagController {
         model.addAttribute("hashtags", hashtagStorage.retrieveHashtagById(id));
     return "Hashtagtemplate";
     }
-  @PostMapping("/hashtag")
-     public String addHashtag(@RequestParam String hashtagName ,@RequestParam long reviewId ){
+    @PostMapping("/hashtag")
+     public String addHashtag(@RequestParam String hashtagName, @RequestParam long reviewId ){
         Hashtag hashtagToAdd = new Hashtag(hashtagName, movieStorage.retrieveMovieReviewById(reviewId));
         hashtagStorage.addHashtag(hashtagToAdd);
         return "redirect:/reviews/"+reviewId;

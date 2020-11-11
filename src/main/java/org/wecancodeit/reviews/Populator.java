@@ -73,12 +73,12 @@ public class Populator implements CommandLineRunner {
         movieStorage.addReview(movieReviewToAdd24);
 
 
+        hashtagRepo.save(new Hashtag("#mustsee", movieReviewToAdd1,mysteryMovie9,movieReviewToAdd20));
+        hashtagRepo.save(new Hashtag("#hilarious", movieReviewToAdd1, movieReviewToAdd2, romanceMovie11, movieReviewToAdd5, movieReviewToAdd6));
+        hashtagRepo.save(new Hashtag("#AdamSandlerMovie", romanceMovie12));
+        hashtagRepo.save(new Hashtag("#TearJerker", movieReviewToAdd21,movieReviewToAdd22));
 
 
-
-
-        hashtagRepo.save(new Hashtag("#mustsee", movieReviewToAdd1));
-        hashtagRepo.save(new Hashtag("#hilarious", movieReviewToAdd1, movieReviewToAdd2));
     }
 
 
